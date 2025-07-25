@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vidovoe_var1.2</title>
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.0.1/model-viewer.min.js"></script>
+    <style>
+     :root {
+        --model-width: 100vw;
+        --model-height: 100vh;
+     }
+        body {
+            margin: 0;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #ffffff; /* фон */
+            font-family: sans-serif; /* шрифт */
+            color: #000000; /*цвет текста*/
+        }
+        
+        /*отображение модели (высота, ширина)*/
+        model-viewer {
+            width: var(--model-width);
+            height: var(--model-height);
+            display: block;
+            --poster-color: #f1f1f1;
+            border: none;
+        }
+
+        /*текстовая рамка*/
+        .info-text {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 10px 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            z-index: 10;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="info-text">
+        Поворот: тяните одним пальцем/лкм.<br>
+        Масштаб: сводите/разводите два пальца/колесико.<br>
+    </div>
+
+   
+
+    <model-viewer
+    src="vidovoe_var1_2.glb"
+    camera-controls
+    auto-rotate
+    auto-rotate-delay="1000000"
+    rotation-per-second="0.2rad"
+    shadow-intensity="1"
+    environment-image="neutral"
+    exposure="0.8"
+    loading="eager"
+    ar
+    ar-modes="webxr scene-viewer quick-look">
+  </model-viewer>
+
+</body>
+</html>
