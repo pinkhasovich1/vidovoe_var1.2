@@ -1,0 +1,1 @@
+# vidovoe_var1.2
